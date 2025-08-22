@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header header header'
+        'menu main main main main right'
+        'footer footer footer footer footer footer';
+    gap: 10px;
+    background-image: url(media/travel_picture.jpg);
+    padding: 10px;
+}
+
+.grid-container>div {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.item1 {
+    grid-area: header;
+    background-color: rgba(105, 101, 101, 0.642);
+    text-align: center;
+    color: rgb(180, 228, 96);
+}
+.item1>h1 { font-size: 40px; font-variant: small-caps;}
+
+.item2 { grid-area: menu; }
+.item2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.item2 li {
+    margin-bottom: 8px;
+    padding: 8px;
+    color: lightblue;
+}
+.item2 li:hover {
+    background-color: rgba(114, 169, 89, 0.582);
+}
+
+.item3 { grid-area: main; }
+.item3 > h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: whitesmoke
+}
+.item3>p {
+    margin-bottom: 8px;
+    color: whitesmoke
+}
+
+.item4 {
+    grid-area: right;
+    border: 2px solid black;
+    background-color: rgba(116, 147, 147, 0.406);
+    padding: 15px;
+}
+.item4 > h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: rgb(193, 28, 28);
+}
+.item4 li {
+    padding: 5px;
+    margin-bottom: 5px;
+    list-style-type: upper-alpha;
+    color: orange;
+}
+a:link { color:orange }
+a:hover { color:dimgray }
+
+.item5 {
+    grid-area: footer;
+    background-color: rgba(105, 101, 101, 0.432);
+    text-align: center;
+    color: rgb(180, 228, 96);
+}
+
+@media only screen and (max-width: 600px) {
+    .item1 { grid-area: 1 / span 6; }
+    .item2 { grid-area: 2 / span 6; }
+    .item3 { grid-area: 3 / span 6; }
+    .item4 { grid-area: 4 / span 6; }
+    .item5 { grid-area: 5 / span 6; }
+}
+
+@media only screen and (min-width: 600px) {
+    .item1 { grid-area: 1 / span 6; }
+    .item2 { grid-area: 2 / span 1; }
+    .item3 { grid-area: 2 / span 4; }
+    .item4 { grid-area: 3 / span 6; }
+    .item5 { grid-area: 4 / span 6; }
+}
+
+@media only screen and (min-width: 768px) {
+    .item1 { grid-area: 1 / span 6; }
+    .item2 { grid-area: 2 / span 1; }
+    .item3 { grid-area: 2 / span 4; }
+    .item4 { grid-area: 2 / span 1; }
+    .item5 { grid-area: 3 / span 6; }
+}
